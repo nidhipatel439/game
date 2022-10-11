@@ -18,13 +18,22 @@ body {
   position: relative;
 }
 
-.score {
-  position: absolute;
+.score-outer {
+  /* position: absolute; */
   font-size: 5vmin;
-  right: 50%;
+  /* right: 50%;
   left:48%;
   transform: translate(-50%,-50%);
-  top: 2vmin;
+  top: 5vmin; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.score-outer p {
+  margin: 0;
+}
+.score {
+  display: inline-block;
 }
 
 .start-screen {
