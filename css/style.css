@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 *,
 ::before,
 ::after {
@@ -11,6 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: 'Silkscreen', cursive;
 }
 
 .world {
@@ -19,12 +22,7 @@ body {
 }
 
 .score-outer {
-  /* position: absolute; */
-  font-size: 5vmin;
-  /* right: 50%;
-  left:48%;
-  transform: translate(-50%,-50%);
-  top: 5vmin; */
+  font-size: 5vmin; 
   text-align: center;
   display: flex;
   justify-content: center;
@@ -32,16 +30,11 @@ body {
 .score-outer p {
   margin: 0;
 }
-.score {
-  display: inline-block;
-}
 
 .start-screen {
-  position: absolute;
   font-size: 5vmin;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 10px 0;
 }
 
 .hide {
