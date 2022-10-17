@@ -16,7 +16,7 @@ body {
   font-family: 'Silkscreen', cursive;
 }
 
-.world {
+.main {
   overflow: hidden;
   position: relative;
 }

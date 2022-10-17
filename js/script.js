@@ -2,16 +2,16 @@ import { setupGround, updateGround } from "./ground.js";
 import { getDinoRect, setDinoLose, setupDino, updateDino } from "./dino.js";
 import { getCactusRects, setupCactus, updateCactus } from "./cactus.js";
 
-const worldWidth = 100;
-const worldHeight = 30;
-const speedScaleIncrease = 0.00001;
+const windowWidth = 100;
+const windowHeight = 30;
+const speed = 0.00001;
 
-const worldElem = document.querySelector("[data-world]");
+const mainElem = document.querySelector("[data-main]");
 const scoreElem = document.querySelector("[data-score]");
 const startScreenElem = document.querySelector("[data-start-screen]");
 
-setPixelToWorldScale();
-window.addEventListener("resize", setPixelToWorldScale);
+setPixelToMainScale();
+window.addEventListener("resize", setPixelToMainScale);
 document.addEventListener("keydown", handleStart, {
   once: true,
 });
@@ -58,7 +58,7 @@ function isCollision(rect1, rect2) {
 }
 
 function updateSpeedSclae(delta) {
-  speedScale += delta * speedScaleIncrease;
+  speedScale += delta * speed;
 }
 
 function updateScore(delta) {
@@ -90,14 +90,14 @@ function handleLose() {
   }, 100);
 }
 
-function setPixelToWorldScale() {
-  let worldToPixelSclae;
-  if (window.innerWidth / window.innerHeight < worldWidth / worldHeight) {
-    worldToPixelSclae = window.innerWidth / worldWidth;
+function setPixelToMainScale() {
+  let mainToPixelSclae;
+  if (window.innerWidth / window.innerHeight < windowWidth / windowHeight) {
+    mainToPixelSclae = window.innerWidth / windowWidth;
   } else {
-    worldToPixelSclae = window.innerHeight / worldHeight;
+    mainToPixelSclae = window.innerHeight / windowHeight;
   }
 
-  worldElem.style.width = `${worldWidth * worldToPixelSclae}px`;
-  worldElem.style.height = `${worldHeight * worldToPixelSclae}px`;
+  mainElem.style.width = `${windowWidth * mainToPixelSclae}px`;
+  mainElem.style.height = `${windowHeight * mainToPixelSclae}px`;
 }

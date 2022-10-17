@@ -8,9 +8,10 @@ const speed = 0.05;
 const cactusIntervalMin = 500;
 const cactusIntervalMax = 2000;
 
-const worldElem = document.querySelector("[data-world]");
+const mainElem = document.querySelector("[data-main]");
 
 let nextCactusTime;
+
 export function setupCactus() {
   nextCactusTime = cactusIntervalMin;
   document.querySelectorAll("[data-cactus]").forEach((cactus) => {
@@ -45,7 +46,7 @@ function createCactus() {
   cactus.src = "images/cactus.png";
   cactus.classList.add("cactus");
   setCustomProperty(cactus, "--left", 100);
-  worldElem.append(cactus);
+  mainElem.append(cactus);
 }
 
 function randomNumberBetween(min, max) {
